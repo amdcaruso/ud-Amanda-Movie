@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Movie App</string>
+    <string name="error_message">An error occurred.</string>
+    <string name="button">Button</string>
+    <string name="action_popularity">Sort by popularity</string>
+    <string name="action_top_rated">Sort by top rated</string>
+</resources>
