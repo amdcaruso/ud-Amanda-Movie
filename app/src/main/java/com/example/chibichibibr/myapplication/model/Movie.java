@@ -1,14 +1,18 @@
 
 package com.example.chibichibibr.myapplication.model;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.Parcelable.Creator;
+import android.support.annotation.NonNull;
 
-public class Movie implements Parcelable {
+public class Movie implements Parcelable, Comparable<Movie>     {
 
     String poster;
     String overview;
@@ -96,4 +100,31 @@ public class Movie implements Parcelable {
             return new Movie[size];
         }
     };
+
+    public ArrayList<Movie> Sort(ArrayList<Movie> list){
+        Collections.sort(list);
+        return list;
+    }
+
+
+    public int compareTo(Movie o1, Movie o2) {
+        try{
+            int x = Integer.parseInt(o1.popularity);
+            int y = Integer.parseInt(o2.popularity);
+            if(x == y) {
+                return 0;
+            }
+            else if(x > y)
+                return 1;
+            else return -1;
+        }
+        catch (NumberFormatException e){};
+
+        return 0;
+    }
+
+    @Override
+    public int compareTo(@NonNull Movie o) {
+        return 0;
+    }
 }

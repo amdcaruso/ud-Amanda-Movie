@@ -6,6 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.chibichibibr.myapplication.model.Movie;
 import com.squareup.picasso.Picasso;
@@ -27,15 +29,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieViewHolder> {
     @Override
     public MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_movie, null);
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Context context = v.getContext();
-                Intent intent = new Intent(context, MovieActivity.class);
-                intent.putExtra(MovieActivity.labelDetail, movies.get(0).toString());
-                context.startActivity(intent);
-            }
-        });
+
         return new MovieViewHolder(view);
     }
 
