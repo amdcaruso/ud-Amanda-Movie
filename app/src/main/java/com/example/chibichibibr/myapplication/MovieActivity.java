@@ -14,6 +14,7 @@ public class MovieActivity extends AppCompatActivity {
     private TextView mDisplayText;
     public static String labelDetail = "test";
     private TextView mDisplayTitle;
+    private TextView mDisplayOverview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,15 +22,14 @@ public class MovieActivity extends AppCompatActivity {
         setContentView(R.layout.activity_movie);
         mDisplayText = (TextView) findViewById(R.id.poster_image);
         mDisplayTitle = (TextView) findViewById(R.id.title);
+        mDisplayOverview = (TextView) findViewById(R.id.overview);
         Intent intentThatStartedThisActivity = getIntent();
 
         if (intentThatStartedThisActivity.hasExtra(labelDetail)) {
             mDisplayText.setText(intentThatStartedThisActivity.getStringExtra(labelDetail));
             Movie movie = (Movie) getIntent().getParcelableExtra(labelDetail);
-            // Make a toast to test, get the attributes and add imageview/text view
-            //Toast.makeText(getApplicationContext(), "Click " + movie , Toast.LENGTH_SHORT).show();
             mDisplayTitle.setText(movie.getTitle());
-
+            mDisplayOverview.setText(movie.getOverview());
 
         }
     }

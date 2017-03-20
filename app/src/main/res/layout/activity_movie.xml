@@ -20,17 +20,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/title"/>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="276dp"
-        android:layout_marginStart="276dp"
-        android:layout_toEndOf="@+id/poster_image"
+        android:id="@+id/overview"
+        android:layout_below="@+id/title"
         android:layout_toRightOf="@+id/poster_image"
-        android:text="@string/button" />
-
+        android:layout_toEndOf="@+id/poster_image"
+        android:layout_marginTop="141dp" />
 
 </RelativeLayout>
